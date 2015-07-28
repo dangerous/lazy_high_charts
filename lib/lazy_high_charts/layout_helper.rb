@@ -48,9 +48,11 @@ module LazyHighCharts
         (function() {
           var f = function(){
             document.removeEventListener('page:load', f, true);
+            document.removeEventListener('page:partial-load', f, true);
             #{core_js}
           };
           document.addEventListener('page:load', f, true);
+          document.addEventListener('page:partial-load', f, true);
         })()
         </script>
         EOJS
